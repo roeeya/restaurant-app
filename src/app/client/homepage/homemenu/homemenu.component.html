@@ -1,0 +1,82 @@
+<!-- MENU-6
+			============================================= -->
+<section id="menu-6" class="wide-70 menu-section division">
+  <div class="container">
+    <!-- SECTION TITLE -->
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="section-title mb-60 text-center">
+          <!-- Title 	-->
+          <h2 class="h2-xl">Taste The Difference</h2>
+
+          <!-- Text -->
+          <p class="p-xl">
+            Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor
+            primis libero tempus, blandit a cursus varius magna
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- MENU ITEM #1 -->
+      <div *ngFor="let item of menus" class="col-sm-6 col-lg-3">
+        <div class="menu-6-item bg-white">
+          <!-- IMAGE -->
+          <div class="menu-6-img rel">
+            <div class="hover-overlay">
+              <!-- Image -->
+              <img
+                class="img-fluid"
+                [src]="endpoint.url + 'getmenuimage/' + item.img"
+                alt="menu-image"
+              />
+
+              <!-- Item Code -->
+
+              <!-- Zoom Icon -->
+              <div class="menu-img-zoom ico-25">
+                <a href="assets/images/menu/roll-11.jpg" class="image-link">
+                  <span class="flaticon-zoom"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- TEXT -->
+          <div class="menu-6-txt rel">
+            <!-- Rating -->
+            <div class="item-rating">
+              <div class="stars-rating stars-lg">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h5 class="h5-sm" [routerLink]="['/detailmenu', item._id]">
+              {{ item.titre }}
+            </h5>
+
+            <!-- Description -->
+            <p class="grey-color">
+              {{ item.Description }}
+            </p>
+
+            <!-- Price -->
+            <div class="menu-6-price bg-salmon">
+              <h5 class="h5-xs white-color">${{ item.prix }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END MENU ITEM #1 -->
+    </div>
+    <!-- End row -->
+  </div>
+  <!-- End container -->
+</section>
+<!-- END MENU-6 -->

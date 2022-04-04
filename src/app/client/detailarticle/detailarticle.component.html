@@ -1,0 +1,80 @@
+<!-- PAGE HERO
+			============================================= -->
+<div id="blog-page" class="page-hero-section division">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="hero-txt text-center white-color">
+          <!-- Breadcrumb -->
+          <div id="breadcrumb">
+            <div class="row">
+              <div class="col">
+                <div class="breadcrumb-nav">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="demo-1.html">Home</a>
+                      </li>
+                      <li class="breadcrumb-item">
+                        <a href="blog-listing.html">Blog</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                        Blog Post
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Title -->
+          <h2 class="h2-xl">Single Blog Post</h2>
+        </div>
+      </div>
+    </div>
+    <!-- End row -->
+  </div>
+  <!-- End container -->
+</div>
+<!-- END PAGE HERO -->
+
+<!-- SINGLE POST
+			============================================= -->
+<section id="single-post" class="wide-100 single-post-section division">
+  <div class="container">
+    <!-- SINGLE POST CONTENT -->
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="single-post-wrapper">
+          <!-- SINGLE POST TITLE -->
+          <div class="single-post-title">
+            <!-- TITLE -->
+            <h2 class="h2-xs">
+              {{ article.titre }}
+            </h2>
+          </div>
+          <!-- END SINGLE POST TITLE -->
+
+          <!-- BLOG POST TEXT -->
+          <div class="single-post-txt">
+            <!-- Text -->
+            <p>
+              {{ article.description }}
+            </p>
+          </div>
+
+          <!-- BLOG POST INNER IMAGE -->
+          <div class="post-inner-img">
+            <img
+              class="img-fluid"
+              [src]="endpoint.url + 'getblogimage/' + article.image"
+              alt="blog-post-image"
+            />
+          </div>
+          <div [innerHtml]="article.content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
